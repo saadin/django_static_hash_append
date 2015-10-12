@@ -17,7 +17,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-django-static-hash-append');
 ```
 
-## The "django_static_hash_append" task
+## The "django_static_hash" task
 
 ### Overview
 In your project's Gruntfile, add a section named `django_static_hash` to the data object passed into `grunt.initConfig()`.
