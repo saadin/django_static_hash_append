@@ -2,22 +2,22 @@
   "name": "grunt-django-static-hash-append",
   "description": "appends static files sha1 checksum as a get param for versioning",
   "version": "0.1.1",
-  "homepage": "https://github.com/sadegh/django_static_hash_append",
+  "homepage": "https://github.com/saadin/django_static_hash_append",
   "author": {
     "name": "saadin",
     "email": "saadin195@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sadegh/django_static_hash_append.git"
+    "url": "git://github.com/saadin/django_static_hash_append.git"
   },
   "bugs": {
-    "url": "https://github.com/sadegh/django_static_hash_append/issues"
+    "url": "https://github.com/saadin/django_static_hash_append/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/sadegh/django_static_hash_append/blob/master/LICENSE-MIT"
+      "url": "https://github.com/saadin/django_static_hash_append/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
@@ -28,8 +28,6 @@
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.9.2",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-nodeunit": "^0.3.3",
     "grunt": "~0.4.0"
   },
   "peerDependencies": {
