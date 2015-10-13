@@ -20,7 +20,8 @@ module.exports = function(grunt) {
             exclude: [],
             staticDirs: ['main/static/'],
             staticsUrl: '/static/',
-            withTagOnly: false
+            withTagOnly: false,
+            verbose: false
         });
         function checksum (str, algorithm, encoding) {
             return crypto
@@ -37,13 +38,19 @@ module.exports = function(grunt) {
                     var src = grunt.file.read(staticDir+filepath);
                     var hash = checksum(src);
                     if(hash === currentVersion){
-                        grunt.log.writeln(chalk.grey('not changed:  ') + line.trim());
+                        if(options.verbose){
+                            grunt.log.writeln(chalk.grey('not changed:  ') + line.trim());
+                        }
                     } else {
                         line = line.replace(regex, '$1'+hash+'$7');
-                        grunt.log.writeln(chalk.green('line updated: ') + line.trim());
+                        if(options.verbose){
+                            grunt.log.writeln(chalk.green('line updated: ') + line.trim());
+                        }
                     }
                 } else {
-                    grunt.log.writeln(chalk.yellow('not found:   ') + filepath);
+                    if(options.verbose){
+                        grunt.log.writeln(chalk.yellow('not found:   ') + filepath);
+                    }
                 }
             });
             return line;
@@ -77,7 +84,9 @@ module.exports = function(grunt) {
             }).forEach(function(filepath) {
                 // Read file source.
                 var src = grunt.file.read(filepath);
-                grunt.log.writeln(chalk.cyan(filepath));
+                if(options.verbose){
+                    grunt.log.writeln(chalk.cyan(filepath));
+                }
                 var new_src = [];
                 src.split('\n').forEach(function(line){
                     [jsMatchWithoutTag, jsMatchWithTag, cssMatchWithoutTag, cssMatchWithTag].forEach(function(regex){
@@ -88,13 +97,17 @@ module.exports = function(grunt) {
                     });
                     new_src.push(line);
                 });
-                grunt.file.write(filepath, new_src.join('\n'));
-                grunt.log.writeln('');
+                if(options.verbose){
+                    grunt.file.write(filepath, new_src.join('\n'));
+                    grunt.log.writeln('');
+                }
                 return src;
             });
 
         });
-        grunt.log.writeln('----------------');
+        if(options.verbose){
+            grunt.log.writeln('----------------');
+        }
     });
 
 };

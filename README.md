@@ -67,6 +67,12 @@ Default value: `false`
 
 Only parse lines that use {% static %} template tag to link to js and css files
 
+#### options.verbose
+Type: `Boolean`
+Default value: `false`
+
+output verbose detail of updated or not changed lines
+
 ### Usage Examples
 
 #### Default Options
