@@ -104,4 +104,13 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+##### 0.1.2
+fixed previous version problems
+
+##### 0.1.1
+added option for verbose detail
+but this release has issues and only works with options.verbose = true
+
+##### 0.1.0
+first release

@@ -1,7 +1,7 @@
 {
   "name": "grunt-django-static-hash-append",
   "description": "appends static files sha1 checksum as a get param for versioning",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/saadin/django_static_hash_append",
   "author": {
     "name": "saadin",

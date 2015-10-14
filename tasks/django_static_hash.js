@@ -1,6 +1,6 @@
 /*
  * grunt-django-static-hash-append
- * https://github.com/sadegh/django_static_hash_append
+ * https://github.com/saadin/django_static_hash_append
  *
  * Copyright (c) 2015 saadin
  * Licensed under the MIT license.
@@ -97,8 +97,8 @@ module.exports = function(grunt) {
                     });
                     new_src.push(line);
                 });
+                grunt.file.write(filepath, new_src.join('\n'));
                 if(options.verbose){
-                    grunt.file.write(filepath, new_src.join('\n'));
                     grunt.log.writeln('');
                 }
                 return src;
